@@ -4,6 +4,7 @@ include '../../Model/Classes/Usuarios.php';
 include '../../Config/conexao.php';
 include '../../public/header.php';
 include '../../public/body.php';
+include '../../Controller/loginOut/somenteAdmin.php';
 
 
 

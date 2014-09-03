@@ -1,8 +1,9 @@
-<?php include 'verifica.php';
+<?php
+include '../../Controller/loginOut/verifica.php';
 //session_start();
 
-if ($_SESSION['logado']) {
-    header("location: ../../View/LoginOut/login.php");
+if (!$_SESSION['logado']) {
+    header("location: ../../View/loginOut/login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@ if ($_SESSION['logado']) {
     <head>
         <meta charset="UTF-8">
         <title> Curso Alpha </title>
-        <link rel="shortcut icon" href="sasokaEm.png" />
+        <link rel="shortcut icon" href="../public/img/sasokaEm.png" />
         <!--<link rel="shortcut icon" href="logo.png" />-->
 
         <link href="../../public/css/bootstrap.min.css" rel="stylesheet">

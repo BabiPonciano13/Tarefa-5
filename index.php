@@ -1,3 +1,3 @@
 <?php
 
-header('location: ../../View/alunos/alunosGrid.php');
+header('location: ../../View/cursoAlpha/cursoAlpha.php');

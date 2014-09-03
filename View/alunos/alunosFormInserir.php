@@ -1,6 +1,13 @@
 <?php 
+include '../../Model/Classes/Professores.php';
 include '../../public/header.php';
 include '../../public/body.php';
+include '../../Config/conexao.php';
+
+$professor = new Professores($conexao);
+
+$dados = $professor->fetchAll();
+
 ?>
 <meta charset="UTF-8">
 <div style="text-align: center"><h2>Cadastrar Aluno</h2></div>
@@ -37,7 +44,7 @@ include '../../public/body.php';
                 <div class="col-sm-10">
                     <select name="professores">
                         <?php foreach ($dados as $key => $row) : ?>
-                            <option value="<?php echo $row->id; ?>"><?= $row->nome; ?></option>
+                            <option value="<?php echo $row['id']; ?>"><?= $row['nome']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>

@@ -16,30 +16,41 @@ $dados = $professor->fetchAll();
         <title></title>
     </head>
     <body>
-        <table class="table table-bordered table-hover" style="background-color: #c0c;">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nome</th>
-                    <th>Turno</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($dados as $key => $row) :
-                    ?>
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover" style="background-color: #935D69;">
+                <thead>
                     <tr>
-                        <td><?= $row['id']; ?></td>
-                        <td><?= $row['nome']; ?></td>
-                        <td><?= $row['turno']; ?></td>
-                        <td><a href="../../View/professores/professoresFormEditar.php?id=<?= $row['id'] ?>" class="btn btn-info">Editar</a></td>
-                        <td><a href="../../Controller/professores/professoresDelete.php?id=<?= $row['id'] ?>" class="btn btn-danger">Excluir</a></td>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Turno</th>
+                        <?php if ($_SESSION['admin'] and $_SESSION['admin_2'] == 'true'): ?>
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                        <?php endif; ?>
+
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-        <a href="../../View/professores/professoresFormInserir.php" class="btn btn-success">Inserir</a>
+                </thead>
+                <tbody>
+                    <?php foreach ($dados as $key => $row) :
+                        ?>
+                        <tr>
+                            <td><?= $row['id']; ?></td>
+                            <td><?= $row['nome']; ?></td>
+                            <td><?= $row['turno']; ?></td>
+                            <?php if ($_SESSION['admin'] and $_SESSION['admin_2'] == 'true'): ?>
+                                <td><a href="../../View/professores/professoresFormEditar.php?id=<?= $row['id'] ?>" class="btn btn-info">Editar</a></td>
+                                <td><a href="../../Controller/professores/professoresDelete.php?id=<?= $row['id'] ?>" class="btn btn-danger">Excluir</a></td>
+                            <?php endif; ?>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php if ($_SESSION['admin'] or $_SESSION['admin_2'] == 'true'): ?>
+
+                <a href="../../View/professores/professoresFormInserir.php" class="btn btn-success">Inserir</a>
+            <?php endif; ?>
+
+        </div>
     </body>
 </html>
 

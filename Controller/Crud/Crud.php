@@ -8,7 +8,7 @@ abstract class Crud {
     public function __construct(PDO $db) {
         $this->dbname = $db;
     }
-//    abstract public function insert();
+    abstract public function insert($parametro);
 
     abstract public function update($parametro);
 
@@ -16,6 +16,7 @@ abstract class Crud {
         $stmt = $this->dbname->prepare("select * from $this->table where id=$id");
         $stmt->execute();
         return $stmt->fetch();
+
     }
 
     public function delete($id) {
