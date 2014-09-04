@@ -1,6 +1,6 @@
 <?php
 
-include '../../Controller/Crud/Crud.php';
+include_once '../../Controller/Crud/Crud.php';
 
 class Alunos extends Crud {
 
@@ -16,12 +16,12 @@ class Alunos extends Crud {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    public function find ($id) {
-        $stmt = $this->dbname->prepare(' select * from professores ');
-        $stmt->execute();
-        return $stmt->fetch();
-        
-    }
+//    public function find ($id) {
+//        $stmt = $this->dbname->prepare(' select * from professores ');
+//        $stmt->execute();
+//        return $stmt->fetch();
+//        
+//    }
 
     public function update($data) {
         $stmt = $this->dbname->prepare("UPDATE $this->table SET nome = :nome, cpf = :cpf, estado = :estado, numero = :numero, prof_id = :professores WHERE id = :id");

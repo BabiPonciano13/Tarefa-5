@@ -12,7 +12,7 @@ if (!$_SESSION['logado']) {
     <head>
         <meta charset="UTF-8">
         <title> Curso Alpha </title>
-        <link rel="shortcut icon" href="../public/img/sasokaEm.png" />
+        <link rel="shortcut icon" href="/public/img/sasokaEm.png" />
         <!--<link rel="shortcut icon" href="logo.png" />-->
 
         <link href="../../public/css/bootstrap.min.css" rel="stylesheet">

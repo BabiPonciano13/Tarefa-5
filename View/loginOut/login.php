@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="../../public/img/sasokaEm.png" />
         <link rel="stylesheet" type="text/css" href="../../public/css/style.css" />
-        <title>Login</title>
+        <title>Curso Alpha</title>
     </head>
     
     <body id="home">

@@ -1,6 +1,6 @@
 <?php
 
-include '../../Controller/Crud/Crud.php';
+include_once '../../Controller/Crud/Crud.php';
 
 class Professores extends Crud {
 

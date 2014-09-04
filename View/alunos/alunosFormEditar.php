@@ -1,6 +1,7 @@
 <?php
 
 include '../../Model/Classes/Professores.php';
+include '../../Model/Classes/Alunos.php';
 include '../../Config/conexao.php';
 include '../../public/header.php';
 include '../../public/body.php';
@@ -8,7 +9,9 @@ include '../../Controller/loginOut/somenteAdmin.php';
 
 
 $professor = new Professores($conexao);
-$dados = $professor->find($_GET['id']);
+$alunos = new Alunos($conexao);
+$dados = $alunos->find($_GET['id']);
+$dados2 = $professor->fetchAll();
 //$stmt = $conexao->prepare(" select * from professores ");
 //$stmt->execute();
 //$dados = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -55,7 +58,7 @@ $dados = $professor->find($_GET['id']);
                 <label for="inputprofessores" class="col-sm-2 control-label">Professores</label>
                 <div class="col-sm-10">
                     <select name="professores">
-                        <?php foreach ($dados as $key => $row) : ?>
+                        <?php foreach ($dados2 as $key => $row) : ?>
                             <option <?php
                             if ($row['id'] == $dados['prof_id']) {
                                 echo 'selected';

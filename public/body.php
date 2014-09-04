@@ -10,7 +10,7 @@
                             <?php if ($_SESSION['admin'] == 'true'): ?>
                             <li><a href='../usuarios/usuariosGrid.php'>Usuários</a></li>
                              <?php endif; ?>
-                            <li><a href="../../View/loginOut/login.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+                            <li><a href="../../View/loginOut/logout.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
                         </ul>
                     </div>
                 </div>
